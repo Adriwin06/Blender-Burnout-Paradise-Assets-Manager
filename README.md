@@ -1,6 +1,8 @@
 # Blender Burnout Batch Assets Import
 
 A simple Blender script to batch import different Burnout Paradise assets into Blender using DGIorio's Burnout Paradise Blender tools.
+### Additional tool
+Another simple Blender script to rename all LODs to a more understandable name, that can help with importing those LODs as LODs of the correct mesh in a game engine.
 
 ## Prerequisites
 
@@ -15,7 +17,7 @@ A simple Blender script to batch import different Burnout Paradise assets into B
 4. Enable the add-on by checking the box next to `Batch Import Burnout Paradise models format (.dat, .BIN, .BNDL)`.
 
 ## How to Use
-
+### Batch importer
 1. Go to `File > Import > Batch Import Burnout Paradise (.dat, .BIN, .BNDL)`.
 2. If you don't see the option despite having the script installed and enabled, copy-paste the content of the script into the `Scripting` tab in Blender and run it. The option should appear now.
 3. Select the files you want to import. You can select multiple files at once.
@@ -24,6 +26,9 @@ A simple Blender script to batch import different Burnout Paradise assets into B
    - **Resource Type**: Select the type of resource.
    - **Is Bundle File**: Check if importing from a bundle file.
    - **Clear Scene**: Check to clear the scene before importing.
+### LOD renaming
+1. Go to `Object` > `BP - Rename All LODs`.
+2. The script will rename all LOD meshes based on their parent objects.
 
 ## Troubleshooting
 

@@ -16,7 +16,7 @@ bl_info = {
     "description": "Batch Import meshes files from Burnout Paradise Remastered PC, Burnout Paradise X360 and PS3, Burnout 5 X360 using DGIorio's import script",
     "author": "Adriwin",
     "version": (1, 0),
-    "blender": (2, 65, 0),
+    "blender": (3, 0, 0),
     "location": "File > Import > Batch Import Burnout Paradise (.dat, .BIN, .BNDL)",
     "warning": "You need to have DGIorio's import script installed", 
     "doc_url": "",
