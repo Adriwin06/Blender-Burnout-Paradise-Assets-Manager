@@ -130,5 +130,4 @@ def unregister():
     bpy.utils.unregister_class(ImportBatchBPR)
     bpy.types.TOPBAR_MT_file_import.remove(menu_func_import)
 
-if __name__ == "__main__":
-    register()
+register()
