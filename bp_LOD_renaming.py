@@ -33,18 +33,19 @@ def rename_lods():
         parent_groups[parent.name].append(obj)
     # Process each group
     for parent_name, children in parent_groups.items():
-        # Sort children by vertex count (highest to lowest)
-        children.sort(key=lambda obj: len(obj.data.vertices), reverse=True)
+        # Add custom property to parent
+        parent = children[0].parent if children[0].parent else children[0]
+        parent["fbx_type"] = "LodGroup"
         # Rename each child
-        for i, child in enumerate(children):
-            # Check if the child's name is hexadecimal
-            if is_hex_named(child.name):
-                # Rename to parent name with LOD index
-                lod_name = f"{parent_name}_LOD{i}"
+        for child in children:
+            # Check if the object has 'renderable_index' custom property
+            if "renderable_index" in child:
+                lod_index = child["renderable_index"]
+                lod_name = f"{parent_name}_LOD{lod_index}"
                 child.name = lod_name
-                print(f"Renamed {child.name} (vertices: {len(child.data.vertices)}, polygons: {len(child.data.polygons)})")
+                print(f"Renamed {child.name} (Renderable Index: {lod_index})")
             else:
-                print(f"Skipped {child.name}, does not have hexadecimal name.")
+                print(f"Skipped {child.name}, does not have 'renderable_index' property.")
 
 class BP_OT_RenameAllLODs(bpy.types.Operator):
     bl_idname = "object.bp_rename_all_lods"
