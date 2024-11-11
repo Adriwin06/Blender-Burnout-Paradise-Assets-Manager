@@ -2,12 +2,14 @@
 
 A simple Blender script to batch import different Burnout Paradise assets into Blender using DGIorio's Burnout Paradise Blender tools.
 ### Additional tool
-Another simple Blender script to rename all LODs to a more understandable name, that can help with importing those LODs as LODs of the correct mesh in a game engine.
+- Another simple Blender script to rename all LODs to a more understandable name, that can help with importing those LODs as LODs of the correct mesh in a game engine.
+- Another script to organize the added buttons from JeBobs' Burnout Paradise Blender Helpers as well as buttons added by my srcipts. They will now all be under a `Burnout Paradise` menu in `Object` > `Burnout Paradise`.
 
 ## Prerequisites
 
 - [Blender](https://www.blender.org/) (version 2.65 or later)
 - [DGIorio's Burnout Paradise Blender tools](https://drive.google.com/file/d/14rUHXb6-Pvbi-Bxcg-CWJaEEjGtFpV-4/view)
+- [JeBobs' Burnout Paradise Blender Helpers](https://github.com/JeBobs/blender_burnout_paradise_helpers) for the menu organizer
 
 ## Installation
 
@@ -28,7 +30,7 @@ Another simple Blender script to rename all LODs to a more understandable name, 
    - **Clear Scene**: Check to clear the scene before importing.
 ### LOD renaming
 1. Go to `Object` > `BP - Rename All LODs`.
-2. The script will rename all LOD meshes based on their parent objects.
+2. The script will rename all LOD meshes based on their parent objects, mostly for for exporting and importing in Unreal Engine 5.
 
 ## Troubleshooting
 
