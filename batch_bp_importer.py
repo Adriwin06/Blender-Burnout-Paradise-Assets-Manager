@@ -55,7 +55,7 @@ class ImportBatchBPR(Operator, ImportHelper):
             ('BP_X360', "X360 - BP", ""),
             ('B5_X360_2006_nov', "X360 - B5 (2006-nov)", ""),
             ('B5_X360_2007_jan', "X360 - B5 (2007-jan)", ""),
-            ('B5_X360_2007_feb', "X360 - B5 (2007-feb)", ""),
+            ('B5_X360_2007_fev', "X360 - B5 (2007-feb)", ""),
         ],
         default='BPR_PC',
     )

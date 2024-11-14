@@ -33,9 +33,6 @@ def rename_lods():
         parent_groups[parent.name].append(obj)
     # Process each group
     for parent_name, children in parent_groups.items():
-        # Add custom property to parent
-        parent = children[0].parent if children[0].parent else children[0]
-        parent["fbx_type"] = "LodGroup"
         # Rename each child
         for child in children:
             # Check if the object has 'renderable_index' custom property
@@ -48,6 +45,7 @@ def rename_lods():
                 print(f"Skipped {child.name}, does not have 'renderable_index' property.")
 
 class BP_OT_RenameAllLODs(bpy.types.Operator):
+    """Rename all LOD objects based on their renderable_index property"""
     bl_idname = "object.bp_rename_all_lods"
     bl_label = "BP - Rename All LODs"
     bl_options = {'REGISTER', 'UNDO'}
