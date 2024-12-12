@@ -19,7 +19,7 @@ def duplicate_and_adjust_wheels():
     # Ensure the active object is an empty (parent) for the wheel mesh
     selected_empty = context.active_object if context.active_object and context.active_object.type == 'EMPTY' else None
     if not selected_empty:
-        print("No valid empty selected. Please select the empty controlling the wheel mesh and try again.")
+        print("No valid empty selected. Please select the empty parent to the wheel mesh and try again.")
         return
     
     # Ensure the empty has a mesh child
@@ -35,7 +35,7 @@ def duplicate_and_adjust_wheels():
     # Find all WheelSpec objects
     wheel_specs = [obj for obj in context.scene.objects if obj.name.startswith("WheelSpec_")]
     if len(wheel_specs) != 4:
-        print("Exactly 4 WheelSpec objects are required. Please check your scene.")
+        print("Exactly 4 WheelSpec objects are required. Please check your scene and make sur that you correctly imported the AT file of the car.")
         return
     
     # Move the selected wheel to the first WheelSpec

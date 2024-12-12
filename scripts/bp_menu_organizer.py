@@ -35,9 +35,9 @@ class OBJECT_MT_bp_vehicle_menu(bpy.types.Menu):
 
     def draw(self, context):
         layout = self.layout
-        layout.operator("object.bp_wheels_collections_remover", text="Wheels Collections Remover")
         layout.operator("object.remove_caliper_with_fewer_polygons", text="Remove Caliper Objects")
         layout.operator("object.bp_duplicate_adjust_wheels", text="Wheels Placer Tool")
+        layout.operator("object.bp_wheels_collections_remover", text="Wheels Collections Remover")
 
 class OBJECT_MT_bp_delete_menu(bpy.types.Menu):
     bl_label = "Delete"
@@ -67,9 +67,9 @@ class OBJECT_MT_burnout_paradise(bpy.types.Menu):
     def draw(self, context):
         layout = self.layout
         layout.menu(OBJECT_MT_bp_lod_menu.bl_idname)
+        layout.menu(OBJECT_MT_bp_vehicle_menu.bl_idname)
         layout.menu(OBJECT_MT_bp_delete_menu.bl_idname)
         layout.menu(OBJECT_MT_bp_other_menu.bl_idname)
-        layout.menu(OBJECT_MT_bp_vehicle_menu.bl_idname)
 
 def menu_func(self, context):
     self.layout.menu(OBJECT_MT_burnout_paradise.bl_idname)
@@ -77,18 +77,18 @@ def menu_func(self, context):
 def register():
     bpy.utils.register_class(OBJECT_MT_burnout_paradise)
     bpy.utils.register_class(OBJECT_MT_bp_lod_menu)
+    bpy.utils.register_class(OBJECT_MT_bp_vehicle_menu)
     bpy.utils.register_class(OBJECT_MT_bp_delete_menu)
     bpy.utils.register_class(OBJECT_MT_bp_other_menu)
-    bpy.utils.register_class(OBJECT_MT_bp_vehicle_menu)
     # Remove menu functions from JeBobs_BP_BlenderTools
     bpy.types.VIEW3D_MT_object.remove(JeBobs_BP_BlenderTools.object_menu_func)
     bpy.types.VIEW3D_MT_add.remove(JeBobs_BP_BlenderTools.add_menu_func)
     # Remove menu from LOD renaming script
     bpy.types.VIEW3D_MT_object.remove(bp_LOD_renaming.menu_func)
     # Remove the vehicles menus
+    bpy.types.VIEW3D_MT_object.remove(bp_wheels_collections_remover.menu_func)
     bpy.types.VIEW3D_MT_object.remove(bp_remove_caliper.menu_func)
     bpy.types.VIEW3D_MT_object.remove(bp_wheel_placer.menu_func)
-    bpy.types.VIEW3D_MT_object.remove(bp_wheels_collections_remover.menu_func)
     # Add the Burnout Paradise menu
     bpy.types.VIEW3D_MT_object.append(menu_func)
 
