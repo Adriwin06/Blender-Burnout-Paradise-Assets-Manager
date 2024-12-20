@@ -1,6 +1,6 @@
-# Blender Burnout Batch Assets Import
+# Blender Burnout Paradise Assets Manager
 
-A comprehensive Blender add-on to batch import and manage various Burnout Paradise assets using DGIorio's Burnout Paradise Blender tools and JeBobs' Burnout Paradise Blender Helpers.
+Simple Blender add-ons to make your workflow with Burnout Paradise assets faster, originally done to speed up my workflow to import in Unreal Engine 5, using DGIorio's Burnout Paradise Blender tools and JeBobs' Burnout Paradise Blender Helpers.
 
 ## Features
 
@@ -26,10 +26,17 @@ A comprehensive Blender add-on to batch import and manage various Burnout Paradi
 2. **Install the Add-on in Blender:**
    - Open Blender and go to `Edit > Preferences > Add-ons`.
    - Click on `Install...` and select the downloaded ZIP file or the specific script files.
-   - Enable the add-on by checking the box next to `Batch Import Burnout Paradise`.
+   - Enable the add-ons by checking the box next to each script you want to use.
 
 3. **Ensure Dependencies are Installed:**
    - Make sure [DGIorio's Burnout Paradise Blender tools](https://drive.google.com/file/d/14rUHXb6-Pvbi-Bxcg-CWJaEEjGtFpV-4/view) and [JeBobs' Burnout Paradise Blender Helpers](https://github.com/JeBobs/blender_burnout_paradise_helpers) are installed and enabled.
+  
+### If it didn't worked
+- Open the ZIP file
+- Drag and drop all Python files in `%appdata%\Blender Foundation\Blender\blender.version\scripts\addons`.
+- Restart Blender
+- Go to `Edit > Preferences > Add-ons`.
+- Enable the add-ons by checking the box next to each script you want to use.
 
 ## How to Use
 
