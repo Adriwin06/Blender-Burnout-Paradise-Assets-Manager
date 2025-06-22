@@ -4,6 +4,7 @@ import bp_LOD_renaming
 import bp_remove_caliper
 import bp_wheel_placer
 import bp_wheels_collections_remover
+import bp_remove_duplicate
 
 bl_info = {
     "name": "Menu Organizer for various Burnout Paradise tools",
@@ -49,6 +50,7 @@ class OBJECT_MT_bp_delete_menu(bpy.types.Menu):
         layout.operator("object.bp_delete_shared_assets", text="Delete Shared Assets")
         layout.operator("object.delete_prop_parts", text="Delete Prop Parts")
         layout.operator("object.delete_prop_alternatives", text="Delete Prop Alternatives")
+        layout.operator("object.bp_remove_duplicate", text="Remove Duplicate Objects")
 
 class OBJECT_MT_bp_other_menu(bpy.types.Menu):
     bl_label = "Other"
@@ -89,6 +91,8 @@ def register():
     bpy.types.VIEW3D_MT_object.remove(bp_wheels_collections_remover.menu_func)
     bpy.types.VIEW3D_MT_object.remove(bp_remove_caliper.menu_func)
     bpy.types.VIEW3D_MT_object.remove(bp_wheel_placer.menu_func)
+    # Remove remove duplicate menu
+    bpy.types.VIEW3D_MT_object.remove(bp_remove_duplicate.menu_func)
     # Add the Burnout Paradise menu
     bpy.types.VIEW3D_MT_object.append(menu_func)
 
@@ -102,6 +106,8 @@ def unregister():
     bpy.types.VIEW3D_MT_object.append(bp_remove_caliper.menu_func)
     bpy.types.VIEW3D_MT_object.append(bp_wheel_placer.menu_func)
     bpy.types.VIEW3D_MT_object.append(bp_wheels_collections_remover.menu_func)
+    # Restore remove duplicate menu
+    bpy.types.VIEW3D_MT_object.append(bp_remove_duplicate.menu_func)
     # Remove the Burnout Paradise menu
     bpy.types.VIEW3D_MT_object.remove(menu_func)
     bpy.utils.unregister_class(OBJECT_MT_burnout_paradise)
